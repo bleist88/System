@@ -1,0 +1,571 @@
+% v3 edited by GMW 2014.10.26 1730 EDT
+% v5 edited by GMW 2014.10.27 2155 EDT
+\documentclass[12pt]{article}
+\usepackage{setspace}
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png}
+\setlength{\parindent}{0em}
+%\setlength{\voffset}{-2cm}
+%\setlength{\hoffset}{-1cm}
+\setlength{\headheight}{0.15in} % changed from 0.65 in, since lots of space is wasted at the tops of pages; GMW 2013.11.08 0413 EST
+\setlength{\topskip}{0cm}
+\setlength{\headsep}{0cm}
+\setlength{\topmargin}{0cm}
+\setlength{\oddsidemargin}{0in}
+\setlength{\evensidemargin}{0.8in}
+%\setlength{\textwidth}{17cm}
+\setlength{\textheight}{9in}
+\renewcommand{\rmdefault}{cmss}
+\setlength{\textwidth}{6.5in}
+\pagestyle{empty}
+\begin{document}
+\newcommand{\Msun}{{\rm M}$_\odot$}
+\newcommand{\Lya}{{\rm Ly}$\sf \alpha$}
+\newcommand{\mum}{$\sf \mu$m}
+
+
+
+\def\spose#1{\hbox to 0pt{#1\hss}}
+\def\simlt{\mathrel{\spose{\lower 3pt\hbox{$\mathchar"218$}}
+   \raise 2.0pt\hbox{$\mathchar"13C$}}}
+\def\simgt{\mathrel{\spose{\lower 3pt\hbox{$\mathchar"218$}}
+   \raise 2.0pt\hbox{$\mathchar"13E$}}}
+\def\lsim{\rlap{$<$}{\lower 1.0ex\hbox{$\sim$}}}
+\def\gsim{\rlap{$>$}{\lower 1.0ex\hbox{$\sim$}}}
+\def\etal{et al.}
+\def\kms{km~s$^{-1}$}
+\def\refs{\leftskip=.3truein\parindent=-.3truein}
+\def\unrefs{\leftskip=0.0truein\parindent=20pt}
+
+\vspace*{-1cm}
+
+%\centerline
+\begin{spacing}{1.5}
+{\bf \Large The GALEUS Survey: Dust properties and morphologies}
+{\bf \Large of UV-selected Galaxies at z~{\boldmath $\sim 2$}}
+\end{spacing}
+\vspace{0.5cm}
+
+{\bf Abstract: } We propose an ultraviolet (UV) to far-infrared (FIR) 
+study of a set of $\sf z\sim 2$ Lyman
+Break Galaxies (LBGs) using wide-deep public data sets to: 
+1) identify a sample of Lyman Break Galaxies (LBGs) and determine
+distribution functions of their physical characteristics, and
+2) place them in the context of current observations of LBGs at higher
+redshift, in particular with our sample's contribution to the IR background.
+%We propose to use a real Lyman break method to identify UV-   
+%and IR-bright LBGs at $1.5<z<2.5$ in the Great Observatories Origin
+%Survey South and North (GOODS-S and -N), COSMOS, and Extended Groth 
+%Strip (EGS) for study and comparison with LBGs at other redshifts. 
+Of special interest are the Herschel (100-500 $\mu$m) FIR data, since
+they allow us for the first time to observe the dust peak emission
+(rest frame 100-200~\mum ) at this epoch and derive extinction
+properties for a large sample of LBGs. Together with morphological
+information from high resolution HST observations, we will be
+able to better constrain the sources making up the extragalactic IR
+background. We will create a well-defined sample of
+true LBGs at redshifts $\sf z\sim 2$  for future studies to allow for consistent
+comparisons with higher $\sf z$ LBG samples, which will be useful to the
+astronomical community.
+\vspace{0.2cm}
+
+%\section{Introduction}
+\hspace{0.1in}
+{\bf Introduction: } 
+{\it Our goals are:\\                                              
+1) to determine distribution functions for star-forming galaxy parameters
+at this epoch, and \\                            
+2) to place them in the context of current observations of star-forming
+galaxies at higher redshift, in particular with our sample's
+contribution to the IR background.}
+
+\hspace{0.1in}
+Determining the processes that drove the formation and evolution of 
+the ensemble of galaxies is a cornerstone of NASA's SMD Origins
+program. Consequently, theoretical progress came from large, detailed
+galaxy simulations (e.g., the Millennium Simulation, Springel et
+al. 2005). Observational advances came from wide-deep public
+surveys (e.g., COSMOS, AEGIS, UKIDSS; Davis et al. 2007; Lawrence et
+al. 2007) and new facilities (Gemini, VLT, ALMA).
+One particular area which will give clues to the nature of galaxy
+evolution involves the IR background, which reveals the signature of star
+formation and dust.
+
+\hspace{0.1in}
+The energy spectrum of the optical-IR background looks like the spectral
+energy distribution (SED) of our Galaxy or the Antennae, with
+comparable terms for the optical and IR in $\sf \nu f_{\nu}$ (Devlin
+et al. 2009). Either (a) the two regimes are \underline{distinct}, with low
+obscuration galaxies producing optical flux and dusty (ultra)-luminous
+IR (LIRG/ULIRG)
+galaxies in the IR (e.g. Devlin et al. 2009), or (b) the optical and IR
+contributions are \underline{related}, where late-type galaxies at all
+redshifts make the optical+IR flux. This latter scenario is
+supported by recent results from Wang et al. (2011), who
+resolved submm detections in the GOODS-N public field into several sources.
+To distinguish between these two models and determine the contribution
+the IR background at moderate redshifts, we must first have a
+well-constructed sample of UV-selected galaxies at $\sf z\sim 2$,
+which contribute flux, but do not dominate the mass
+(Haberzettl et al. 2012, Ly et al. 2011).
+
+{\it We could then examine the UV luminosity per unit mass and how
+  much extinction re-processes it into the IR, a key mechanism in
+  producing the IR background.} 
+
+\hspace{0.1in}
+{\bf Why Lyman Break Galaxies:}
+LBGs can be considered prototypes for strongly star-forming galaxies,
+and are identified by the lack of flux at wavelengths $< 912$~\AA\ in broad-band
+images.
+At
+$\sf z\gsim 3$ this break can be observed in ground-based observed data,
+while at $\sf 1\lsim z \lsim 2.5$ \underline{space based UV
+observations are needed}. The Lyman break provides an easy selection method
+over most of the age of the
+Universe (e.g. Bouwens et al. 2005 and references therein), which
+makes LBGs so attractive for
+comparative studies of galaxy properties over time.
+
+\hspace{0.1in}
+At $\sf z\sim 8-6$, LBGs are mainly faint and compact ($\sf \lsim
+1$~kpc) (Bouwens et al. 2010b; Oesch et al. 2010).
+At $\sf z\sim 3-4$, they tend to be more massive and contribute
+more to the star formation rate (SFR, Shim et al. 2007).  By
+$\sf z\sim 1$, they make up only $\sf \sim 11$\% of galaxies, and include both
+red/dusty/massive and blue populations (Burgarella et al. 2006,
+2007).
+
+\hspace{0.1in}
+{\it A key epoch at $\sf z=1-3$:}
+At z~$\sim 1-3$, , LBG SFRs decrease and dust
+contents increase (Basu-Zych et al. 2011). Their morphology changes
+from mostly proto-ellipticals to mainly disk galaxies, indicating that
+somehow, angular momentum ``came into its own''.
+Intriguingly, the SFR is also near its maximum
+(Coe et al. 2013) and the
+last significant star formation occurs in the most massive galaxies
+(Kodama et al. 2007). 
+
+\hspace{0.1in}
+Recent observations reveal different populations of
+galaxies such as sub-mm galaxies (SMGs) at $\sf z>2$, LBGs at
+$\sf z\gsim3$, and old (distant red galaxies) and dusty (BzKs)
+galaxies at $\sf 2\lsim z\lsim 3$, with some suggested overlap between them.
+These {\it overlap galaxies}\, tend to have comparable masses and
+dust contents, and represent more dusty and intensively star-forming
+LBGs. Herschel data for $\sf z\sim 3$ LBGs indicate an overlap
+population of ULIRGS  (Magdis et al. 2010), and an under-prediction of
+IR luminosity based on UV fluxes (Rigopoulou et al. 2010). 
+
+\hspace{0.1in}
+{\bf LBGs as Tracers of Star Formation and Galaxy Evolution:}
+LBGs generally represent 
+star-forming, relatively dust-free, intermediate-mass
+galaxies, albeit with evidence
+for a high mass tail.
+
+\hspace{0.1in}
+\underline{LBGs in the mid-IR:} Some LBGs are
+mid-IR-luminous  ($3.6-24$~\mum), corresponding to rest-frame near-IR (NIR)
+at z~$\sim 1.5-3$ and observable by Spitzer+IRAC. 
+Rest-frame NIR flux reveals stellar masses
+(Cole et al. 2001; Glazebrook et
+al. 2004), and some massive LBGs are revealed by high IRAC fluxes.
+The 24~\mum\ MIPS data probe Polycyclic Aromatic
+Hydrocarbons (PAHs) at $\sf z\sim 2$, from two rest-frame emission
+features at 6.2~\mum\ and 7.7~\mum. 
+Bright LBGs (L$>$L$^*$) and cold SCUBA sources show PAH emission 
+(Reddy et al. 2006), and are considered
+comparable to local starburst galaxies
+(Siana et al. 2008, 2009).
+
+\hspace{0.1in}
+\underline{z~$\sim 2-3$ Infrared-luminous (IL)LBGs in the far-IR -- recent studies}:
+\underline{\bf (A)} Magdis et al. (2010) used Herschel/PACS
+at 100,160~\mum\ for a stacked sample of Spitzer-detected
+$\sf z\sim 3$ LBGs in GOODS-N, and found luminosities
+$\sf \langle L_{IR}\rangle \sim 1.6\times 10^{12}M_\odot$, 
+corresponding to ULIRGS.
+The MIPS-selected sample shows warmer dust temperatures than sub-mm
+selected galaxies, and could be missed in sub-mm surveys
+biased toward colder systems.
+\underline{\bf (B)} Rigopoulou et al. (2010) stacked Herschel/SPIRE images of
+$\sf z\sim 3$ LBGs and $\sf z\sim 2$ BM/BX galaxies (a proxy to ground-select LBGs) 
+in GOODS-N, and found fluxes 
+$\sf \langle S_{250,LBG}\rangle =5.9\pm 1.4$~mJy 
+with a fainter $\sf \langle S_{250,BM/BX}\rangle =2.7\pm 0.8$~mJy.  
+The predicted $\sf L_{IR,BM/BX}$
+is consistent with their UV data.  However,
+the $\sf z\sim 3$ LBG UV fluxes
+underpredict $\sf L_{IR,LBG}$, suggesting
+that differences in physical properties 
+(morphologies, dust content, star-forming regions)
+between their LBGs and BM/BXs may be
+significant.
+\underline{\bf (C)} Ote et al. (2013) published a study of PACS detected $\sf z\sim 1$
+LBGs. Their results indicate a trend between $\sf z\sim 3$ and $1$
+from strong star forming LIRG/ULIRG type galaxies at $\sf z\sim 3$ to
+normal star forming galaxies at $\sf z\sim 1$, which is supported
+by our preliminary results, too (Fig.~1).  
+
+
+\hspace{0.1in}
+{\bf This Project in Brief:} We propose the 
+GALEUS (GALaxy Evolution UV Survey) to use
+public wide-deep surveys (Table~1) to study the physical
+properties of UV-selected star-forming galaxies at $\sf z\sim 2$. We will
+investigate the contribution of UV and IR luminous galaxies to the
+population of LBGs, using UV to FIR data from a number of public wide-deep
+fields (Table~1). 
+{\it Detailed analysis of the galaxy SEDs and HST images will
+let us meaningfully constrain the types of galaxies
+contributing to the IR background, and construct a very useful true
+LBG sample for future studies (e.g. by JWST).}
+
+\hspace{0.1in}
+\underline{\it The need for UV data}:  These identify 
+true Lyman break galaxies at
+$\sf z\sim 2$; see Haberzettl et al. (2012) for a first study for GOODS-S. 
+
+
+\hspace{0.1in}
+\underline{\it The need for mid/far-IR data}:  These 
+will give us unique access to galaxy parameters like stellar
+masses (IRAC 3.6-8.0 \mum) and dust properties (MIPS 24~\mum, Herschel
+100 - 500~\mum) for an IR-bright LBG subsample. The Herschel data are
+crucial, since they measure the dust emission peak
+at rest-frame 100-200~\mum .
+The dust properties and galaxy masses are
+essential for understanding the evolution of star formation,
+especially the reprocessing of UV-photons due to dust.
+
+\hspace{0.1in}
+\underline{\it The need for HST images}: We can then estimate morphologies of the sample galaxies. {\it If
+  the background is mainly produced by late-type galaxies at all $\sf
+  z$, with similar optical:IR contributions, we expect to identify a
+  large fraction of spiral morphologies as well as spiral-spiral mergers.} 
+
+\hspace{0.1in}
+\underline{Additional data}: We will also use public 
+broad-band optical/IR and spectroscopy data
+(e.g. $\sim$20000 redshifts from DEEP2, Davis et al. 2007), 
+to estimate accurate photo-$\sf z$'s.
+
+\hspace{0.1in}
+Our results will provide the base for future detailed
+spectroscopic studies of subsamples of \underline{large numbers} of
+\underline{bright} LBGs, using IFU and NIR spectroscopes. 
+{\it It therefore complements deeper studies of much smaller fields
+  with narrower NUV filters done by HST (e.g. Hathi et al. 2010),
+  which can never cover the amount of area observed by GALEX.  It also
+  builds on wide-field studies such as Haberzettl et al. (2012) and Ly
+  et al. (2011).} 
+
+\hspace{0.1in}
+{\bf Preliminary Results:} A pilot study of a
+subsample of IR-luminous LBGs (ILLBGs) in the GOODS-S shows the
+feasibility of this project. We measured FIR (70--500~$\sf
+\mu$m) fluxes for 5 ILLBGs using Herschel data from the surveys of Magnelli
+et al. (2013) and Smith et al. (2012). The sample has
+stellar masses of $\sf 3-20\times10^9$~M$_\odot$ and SFRs of
+up to 200 M$_\odot$ yr$^{-1}$. Fitting modified Planck curves to the
+Herschel FIR fluxes (Fig.~1), we estimated
+dust temperatures of $\sim$45-60 K, dust masses between 
+$\sf 1-300\times 10^7$~M$_\odot$, and total IR luminosities of
+$\sf 2-30\times 10^{10}$L$_\odot$. We used HST images to
+constrain radii from a few kpc for the compact objects to
+$\sf \sim 14$~kpc for the extended disks. The Herschel-detected sample of 
+ILLBGs exhibits properties comparable to normal star-forming 
+rather than LIRG/ULIRG type galaxies, and also shows extended disk-like
+morphologies (Fig.~1). These results support the
+assumption that the IR background could be the result of late-type
+galaxies at all redshifts. {\it However, the sample size is small.} 
+
+\begin{table}[htbp]
+\begin{tabular}{lll}
+Filter Band&Field / References$^{5)}$&Field Size [deg$^2$]\\
+\hline
+GALEX FUV&GOODS-S, GOODS-N, COSMOS, EGS&1,1,2,1\\
+GALEX NUV&GOODS-S, GOODS-N, COSMOS, EGS&1,1,2,1\\
+UBVRIz&GOODS-S, GOODS-N&0.25,0.25\\
+ugriz&COSMOS, EGS&1,1\\
+HST ACS F606W/850LP&GOODS-S,GOODS-N,EGS$^{1)}$&0.25, 0.06,0.1\\
+HST ACS F814W&COSMOS,EGS&1,0.17\\
+NIR JHKs&GOODS-S,GOODS-N$^{2)}$COSMOS$^{3)}$,EGS$^{3)}$&0.06,0.1,2,0.7\\
+Spitzer IRAC&GOODS-S, GOODS-N, COSMOS, EGS&0.4,0.4,1.7,0.8\\
+Spitzer MIPS&GOODS-S, GOODS-N, COSMOS, EGS&0.4,0.7,1.7,0.8\\
+Herschel PACS 70$^{4)}$,100,160\mum&GOODS-S,GOODS-N,COSMOS,EGS&0.4,0.04,2,0.2\\
+Herschel SPIRE 250,350,500\mum&GOODS-S,GOODS-N,COSMOS,EGS&0.1,0.1,2,0.2\\
+\hline
+\end{tabular}
+\caption{Overview of publicly available multi-frequency data for the
+  proposed fields.
+$^{1)}$ EGS only observed in HST ACS F606W;
+$^{2)}$ combined H+K image;
+$^{3)}$ only Ks data available;
+$^{4)}$ only available for GOODS-S;
+$^{5)}$ Scoville et al. 2007, Rix et al. 2004; Davis et
+al. 2007; Koekemoer et al. 2007, Giavalisco et al. 2004;
+Gawiser al. 2006; Ilbert et al. 2006; Capak et
+al. 2004}
+\end{table}
+
+
+
+\begin{figure}[htbp]
+\vspace*{-10mm}
+\includegraphics[width=2.4in]{11800_1.png}
+\hspace{0.1in} 
+\includegraphics[width=1.8in]{sfr_compare_2.png}
+\hspace{-0.1in} 
+\includegraphics[width=1.8in]{mass_compare_v3.png}
+%\end{figure}  
+%\begin{figure}
+
+
+%\hspace{0.1in}
+%\includegraphics[width=2in, trim = 0in 0in 0in 1.7in, clip]{illbg08.png}
+%\hspace{0.1in}
+%\includegraphics[width=2in, trim = 0in 0in 0in 1.7in, clip]{illbg10.png}
+\hspace{0.1in}
+\includegraphics[width=3.0in, trim = 0in 0in 0in 1.7in, clip]{illbg13.png}
+\caption{{\it Top Left}: Example for Herschel detected ILLBGs. The flux is
+  fitted with modified Planck curves (red lines). The flux
+  measurements included in the fit are indicated by black
+  diamonds. Filter bands can be excluded from the fit (open diamonds)
+  for two reasons a) target is not detected or b) flux of target is
+  contaminated by neighboring objects. {\it Top middle}: Stellar
+  mass vs. SFR -- The lines indicate the ``main sequence'' for normal star
+  forming galaxies. {\it Top right}: Stellar Mass vs. dust mass --
+  dust masses 
+  of our ILLBGs are comparable to higher redshifted sub-mm
+  galaxies. {\it Bottom row}: Results of a
+  morphological analysis of HST-observed ILLBGs using GALFIT. {\it Left}:
+  HST ACS F850LP (size $\sf 9^{\prime\prime}\times 9^{\prime\prime}$);
+  {\it Middle}: best GALFIT model; {\it Right}: residual.}
+\end{figure}
+
+{\it Here we propose a more direct comparison with
+  $\sf z\sim 2$ LBGs, the selection of which is not as strongly biased
+  against IR-luminous galaxies as that for BM/BX galaxies (Haberzettl
+  et al. 2012).}
+Since LBGs represent the majority of the star formation rate at
+$\sf z\simgt1$, they are our best tool available to address the following.
+
+\hspace{0.1in}
+{\bf (1)} We will constrain directly the types of
+LBGs which contribute to the IR background. Are the contributions
+in the optical from low obscuration galaxies, and in the IR from
+LIRGS+ULIRGS?  Or do late-type galaxies produce the contribution
+in both wavelength regimes (Wang et al. 2011)? This is
+supported by our recent paper (Haberzettl et
+al. 2012) and further preliminary results.
+
+\hspace{0.1in}
+{\bf (2)} Our LBG sample will lead to a number of follow-up studies, because
+$\sf z\sim 2$ is a particularly interesting epoch
+in terms of the star formation peak (Reddy et al. 2008, Coe et al. 2013), the
+establishment of the morphology-density relation and
+final star formation in massive galaxies  (e.g. Kodama et al. 2007).
+We can address issues such as the escape fraction of Lyman continuum photons,
+merger rate, distribution of metals and the detailed LBG mass
+spectrum, among others.
+
+
+\hspace{0.1in}
+{\bf Specific goals:} This proposal is part of a larger on-going study
+of LBGs at the crucial epoch of $\sf z \sim 2$.
+%Here, we plan
+%to study the general properties of LBGs, and specifically dust
+%properties of ILLBGs in detail, using Herschel observations of the
+%four survey fields.
+As part of his Bachelor Thesis, B. Leist will address an important
+technical problem in multi-wavelength studies: {\it ``How to efficiently
+correlate object data from an inhomogeneous, multi-wavelength data
+set?''}  
+For the GALEUS project we have to combine information from up 20
+observed filter-bands from the UV to mid-IR, with different field of
+views, and different resolution for several hundred thousand objects.
+The goal is to create a master object catalog with the highest
+possible flexibility. To accomplish this goal Leist is currently
+working on a python program (independent of licensed software packages like
+IDL) for the multi-wavelength object correlation. The software is
+designed to be easily adaptable for use in other projects with
+different combinations of observed filter bands and will be provided
+to the community with the first data release of GALEUS.  
+Over the last few month he has already accomplished a promising preliminary
+version and will finish a fully functioning version until his
+graduation in May 2015. He is also expected to perform thorough tests
+of the final version and help with the compilation of the final master
+catalog and object selection under the lead of graduate student
+Matthew Nichols (Graduate Student Fellowship proposal submitted separately). 
+
+We expect the following specific goals by 05/15: (1) A final, fully
+tested python program capable of compiling master catalogs from
+inhomogeneous multi-wavelength data sets 3/15.
+(2) The compilation of a master object catalog from catalogs created
+via SExtractor searches (NUV to the 24~$\sf \mu$m) and selection of
+LBG and ILLBG candidates following the methods described in Haberzettl
+et al. (2012). 
+Step (2) is in support for M. Nichols, who is applying for a separate
+KSGC Graduate Fellowship.
+A first publication of results from the GALEUS survey is expected in
+the beginning of 2016. Further publications, especially on the
+structural parameter and morphology of the sample galaxies are
+expected to follow. 
+
+\hspace{0.1in}
+\underline{Anticipated results and importance::} We expect that Brian
+Leist's python 
+program will allow us to efficiently combine information from
+multi-wavelength data sets. The tool will also add information about
+the coverage of objects in the different filter-bands. For future
+analysis it is important to know if objects are not covered by
+observations in a filter-band, or if they are simply not detected. 
+His results will be very valuable for the future work of our and other
+groups. His support with compiling the master catalog and object
+selection will help to speed up this first step of the project and
+help M. Nichols' with his analysis.
+A first publication on the overall properties of the
+selected LBG and ILLBGs is expected for the beginning of 2016 and
+Brian will be a co-author on this publication. We are also planning on
+setting up a web-page for the GALEUS survey which will provide the
+results, data releases (including catalogs and software tools) to the
+public. The first data release is planed for December 2015. 
+
+Even with the funding in period 2015, we expect that our
+project will gain significantly. The results expected from the
+proposed period in 2015 will help us when competing for other funding
+resources to finish up additional steps of the project. For example we
+will submit a HST archival proposal for the study of the morphologies
+of star forming galaxies.
+Additionally this study also has implication for future NASA missions
+like JWST. Although the main focus of JWST is the high redshift
+Universe, the IR properties of moderate redshifted star forming
+galaxies are an important field of study and well characterized sample
+of IR bright targets will benefit future JWST projects in this field. 
+
+
+\hspace{0.1in}
+\underline{Mentoring}: Haberzettl and Williger will advise Leist.
+With his experience in the data analysis of multi-wavelength surveys
+J. Colbert (IPAC) is the ideal NASA mentor, especially with Herschel
+FIR data, and will have regular telecons with us.  Colbert 
+is crucial for the successful implementation of the mid- to far-IR
+data into the master catalogs. 
+
+
+
+\hspace{0.1in}
+\underline{Progress towards degree:} This proposal forms
+the core of Leist's bachelor work. He will undergo advanced training
+in multi-wavelength data mining. In the process, he will strengthen
+his programming skills and help deriving object sample for further
+analysis. Graduation is planned for May 2015.
+
+
+
+
+\newpage
+\noindent
+{\bf References: }\\
+Basu-Zych et al. 2011, ApJ 739, 98 \\                          %
+Best 2004, MNRAS, 351,70\\                         %
+Bouwens et al. 2004, ApJ, 616, L79\\               %
+Bouwens et al. 2005, ApJ, 624, L5\\                %
+Bouwens et al. 2010a, ApJ 709, 133\\               %
+Bouwens et al. 2010b, ApJ 725, 1587\\              %
+%Bundy et al. 2005, ApJ, 625, 621\\                 %
+Burgarella et al. 2006, A\&A, 450, 69\\            %
+Burgarella et al. 2007, MNRAS, 380, 986\\          %
+Capak et al. 2004, AJ, 127, 180\\                  %
+%Chapman et al.  2003, Nature, 422, 695\\
+%Cimatti et al. 2002, A\&A, 2002, 381, 68\\
+Coe et al. 2013, ApJ 762, 32\\                     %
+Cole et al. 2001, MNRAS, 326, 255\\                %
+Davis et al. 2007, ApJ, 660, L1\\                  %
+Devlin et al. 2009, Nature, 458, 737\\             %
+%Drory et al. 2004, ApJ, 608, 742\\                 %
+Gawiser et al. 2006, ApJS, 162, 1\\                %
+Giavalisco et al. 2004, ApJ, 600L, 93G\\           %
+Glazebrook et al. 2004, Nature, 430, 181\\         %
+%Guo \& White 2009, MNRAS, 396, 39\\
+Haberzettl et al. 2012, ApJ\\                      %
+Hathi et al. 2010, ApJ 720, 1708\\                 %
+Ilbert et al. 2006, A\&A 457, 841\\                %
+%Kere\v{s} et al. 2005, MNRAS, 363, 2\\
+Kodama et al. 2007, MNRAS, 377, 1717\\             %
+Koekemoer et al. 2007, ApJS, 172, 182\\            %
+%Kriek et al.  2008, ApJ, 682, 896\\
+Lawrence et al. 2007, MNRAS,  2007, 379, 1599\\    %
+Lehnert \& Bremer 2003, ApJ, 593, 630\\            %
+Lehnert et al. 2010, Nature, 467, 940\\            %
+Ly et al. 2011, ApJ 735, 91L\\                     %
+Magdis et al. 2010, ApJ, 720, L185\\               %
+Magnelli et al. 2013, A\&A 553, 132\\              %
+Oesch et al. 2010, ApJ 709, 21O\\                  %
+%Ouchi et al. 2008, ApJS, 176, 301\\
+Oteo et al. 2013, MNRAS,435,158\\
+%Pei 1995, ApJ 438, 623\\                           %
+Reddy et al. 2006, ApJ, 644, 792\\                 %
+Reddy et al. 2008, ApJS, 175, 48\\                 %
+Rigopoulou et al. 2010, MNRAS, 409, L7\\           %
+Rix et al. 2004, ApJS, 152, 163\\                  %
+Scoville et al. 2007, ApJS 172, 1\\                %
+Shim et al. 2007, ApJ, 669, 749\\                  %
+Siana et al. 2008, ApJ, 689, 59\\                  %
+Siana et al. 2009, ApJ, 698, 1273\\                %
+Smith et al. 2012, MNRAS 437, 703\\                %
+Springel et al. 2005, Nature, 435, 629\\           %
+%Steidel et al.  2003, ApJ, 592, 728\\              %
+Wang et al. 2011, ApJ 726, 18\\                    %
+%Wuyts et al.  2008, ApJ 682, 985\\    
+%Yan et al. 2004, AJ 127, 1274
+
+%\clearpage
+%\setlength{\oddsidemargin}{-1in}
+%\begin{figure}
+%\vspace{-1in}
+%\includegraphics[angle=-90]{10_28_13_Unofficial.pdf}
+%\end{figure}
+
+%\setlength{\oddsidemargin}{-1in}
+%\begin{figure}
+%\vspace{-1in}
+%\includegraphics[page=1]{MTNResume.pdf}
+%\end{figure}
+%\setlength{\oddsidemargin}{-1in}
+%\begin{figure}
+%\vspace{-1in}
+%\includegraphics[page=2]{MTNResume.pdf}
+%\end{figure}
+%\setlength{\oddsidemargin}{-1in}
+%\begin{figure}
+%\vspace{-1in}
+%\includegraphics[page=1]{dbrown_support.pdf}
+%\end{figure}
+%\setlength{\oddsidemargin}{-1in}
+%\begin{figure}
+%\vspace{-1in}
+%\includegraphics[page=2]{dbrown_support.pdf}
+%\end{figure}
+%\setlength{\oddsidemargin}{-1in}
+%\begin{figure}
+%\vspace{-1in}
+%\includegraphics[page=1]{cv_gerry_ksgc201311.pdf}
+%\end{figure}
+%\setlength{\oddsidemargin}{-1in}
+%\begin{figure}
+%\vspace{-1in}
+%\includegraphics[page=2]{cv_gerry_ksgc201311.pdf}
+%\end{figure}
+
+
+%\setlength{\oddsidemargin}{-1in}
+%\begin{figure}
+%\vspace{-1in}
+%\includegraphics[page=2]{KYConsortium_20131107_1856_Nichols.pdf}
+%\end{figure}
+
+\end{document}

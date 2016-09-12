@@ -1,0 +1,56 @@
+#!/usr/local/bin/python3
+"""
+Run/cclass.py
+
+This script copies two class template files ( a header and definitions file )
+and writes them in the current working directory.  The file replaces a set of
+characters with the name of the new class ( given in the command line ).
+
+    $ cclass  <class_name>
+"""
+
+from __future__ import absolute_import
+from __future__ import division
+from __future__ import print_function
+from __future__ import unicode_literals
+
+import sys
+
+################################################################################
+
+## User variables.
+
+template        = '/home/brian/Workspace/Run/Templates/Template'
+keyChar         = '<CLASS>'
+
+# Command line arguments.
+
+if len(sys.argv) == 1:
+	class_name = raw_input( "\tPlease enter the name of the new class:   " )
+else:
+	class_name = sys.argv[1]
+
+# Open templates.
+
+hhFile = open( ''.join([ template, '.hh' ]), 'r')
+hhTemp = hhFile.read()
+hhFile.close()
+
+ccFile = open( ''.join([ template, '.cc' ]), 'r')
+ccTemp = ccFile.read()
+ccFile.close()
+
+# Replace key characters.
+
+hhTemp = str.replace( hhTemp, keyChar, class_name )
+ccTemp = str.replace( ccTemp, keyChar, class_name )
+
+# Write new classes.
+
+hhOut = open( ''.join([ './', class_name, '.hh' ]), 'w' )
+hhOut.write( hhTemp )
+hhOut.close()
+
+ccOut = open( ''.join([ './', class_name, '.cc' ]), 'w' )
+ccOut.write( ccTemp )
+ccOut.close()

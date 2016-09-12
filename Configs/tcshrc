@@ -1,0 +1,24 @@
+# TCSHRC
+
+## To update changes made in the .tcshrc file...
+##    source .tcshrc
+
+## My shell can be switched to a bash shell via...
+##    chsh -s /bin/bash/
+## Unfortunately, I don't have permissions to do so.
+
+## PATHS
+
+setenv  PATH		    ${PATH}:/astro/bin/:.:
+setenv  PATH            ${PATH}:/home/bleist/System/Scripts:
+setenv  PATH            ${PATH}:/home/bleist/System/Library/Scripts/:
+
+setenv  PYTHONPATH	   /home/bleist/System/Library/:
+
+## Variables
+
+## Aliases
+
+alias   ds9		       'ds9_72'
+alias   python		   'ipython3'
+alias   python2		   'ipython2'

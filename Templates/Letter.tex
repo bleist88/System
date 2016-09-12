@@ -1,0 +1,69 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Full Size Formal Letter
+% LaTeX Template
+% Version 1.2 (8/2/13)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Micha Elmueller (http://micha.elmueller.net/)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	pagenumber=false, % Removes page numbers from page 2 onwards
+	parskip=half, % Separates paragraphs with some whitespace, use parskip=full for more space or comment out to return to default
+	fromalign=right, % Aligns the from address to the right
+	foldmarks=true, % Prints small fold marks on the left of the page
+	addrfield=true % Set to false to hide the addressee section - you will then want to adjust the height of the body of the letter on the page by adding the following in this section: \makeatletter \@setplength{refvpos}{\useplength{toaddrvpos}} \makeatletter
+	]{scrlttr2}
+
+\usepackage[english]{babel} % Explicitly load the babel package to stop an error occurring on some LaTeX installations
+
+\renewcommand*{\raggedsignature}{\raggedright} % Stop the signature from indenting
+
+%----------------------------------------------------------------------------------------
+%	YOUR INFORMATION AND LETTER DATE
+%----------------------------------------------------------------------------------------
+
+\setkomavar{fromname}{Brian Spalding Leist} % Your name used in the from address
+\setkomavar{fromaddress}{4715 Lynn Lea Rd. \\ Louisville, Kentucky 40216} % Your address
+\setkomavar{signature}{Brian Leist} % Your name used in the signature
+
+\date{\today} % Date of the letter
+
+%----------------------------------------------------------------------------------------
+ 
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	ADDRESSEE
+%----------------------------------------------------------------------------------------
+ 
+\begin{letter}{Gerard Williger \\ Department of Physics and Astronomy \\ University of Louisville } % Addressee name and address
+
+%----------------------------------------------------------------------------------------
+%	LETTER CONTENT
+%----------------------------------------------------------------------------------------
+
+\opening{To the Committee,}
+
+
+\closing{Thank You,}
+
+%\setkomavar*{enclseparator}{Attached} % Change the default "encl:" to "Attached:"
+%\encl{Copyright permission form} % Attached documents
+
+%----------------------------------------------------------------------------------------
+
+\end{letter}
+ 
+\end{document}

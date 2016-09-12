@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--   -->
+
+<style-scheme id="bryl" _name="bryl" version="1.0">
+    <author>Brian</author>
+    <_description>Dark color scheme with low contrast</_description>
+
+
+<!--   C O L O R   P A L E T T E   -->
+<color name="butter1"                     value="#fce94f"/>
+<color name="butter2"                     value="#edd400"/>
+<color name="butter3"                     value="#c4a000"/>
+<color name="chameleon1"                  value="#8ae234"/>
+<color name="chameleon2"                  value="#73d216"/>
+<color name="chameleon3"                  value="#4e9a06"/>
+<color name="orange1"                     value="#fcaf3e"/>
+<color name="orange2"                     value="#f57900"/>
+<color name="orange3"                     value="#ce5c00"/>
+<color name="skyblue1"                    value="#729fcf"/>
+<color name="skyblue2"                    value="#3465a4"/>
+<color name="skyblue3"                    value="#204a87"/>
+<color name="plum1"                       value="#ad7fa8"/>
+<color name="plum2"                       value="#75507b"/>
+<color name="plum3"                       value="#5c3566"/>
+<color name="chocolate1"                  value="#e9b96e"/>
+<color name="chocolate2"                  value="#c17d11"/>
+<color name="chocolate3"                  value="#8f5902"/>
+<color name="scarletred1"                 value="#ef2929"/>
+<color name="scarletred2"                 value="#cc0000"/>
+<color name="scarletred3"                 value="#a40000"/>
+<color name="aluminium1"                  value="#eeeeec"/>
+<color name="aluminium2"                  value="#d3d7cf"/>
+<color name="aluminium3"                  value="#babdb6"/>
+<color name="aluminium4"                  value="#888a85"/>
+<color name="aluminium5"                  value="#555753"/>
+<color name="aluminium6"                  value="#2e3436"/>
+
+<!-- ################################################################################# -->
+
+<!--   G L O B A L   S E T T I N G S -->
+<style name="text"  foreground="aluminium2" background="aluminium6"/>
+<style name="current-line" background="aluminium5"/>
+<style name="selection" foreground="butter1" background="aluminium4"/>
+<style name="cursor" foreground="aluminium2"/>
+<style name="line-numbers" foreground="aluminium5" background="#black"/>
+
+<!-- Bracket Matching -->
+<style name="bracket-match" foreground="butter1" bold="true"/>
+<style name="bracket-mismatch" foreground="orange2" background="aluminium3" bold="true"/>
+
+<!-- Comments -->
+<style name="def:comment"   foreground="aluminium4" italic="true" bold="true"/>
+<style name="def:shebang"   foreground="aluminium3" italic="true" bold="true"/>
+<style name="def:doc-comment-element" italic="true"/>
+
+<!-- Numbers -->
+<style name="def:constant"              foreground="orange2" bold="true"/>
+<style name="def:base-n-integer"        foreground="orange1" italic="true"/>
+<style name="def:floating-point"        foreground="orange3" bold="true"/>
+<!-- strings -->
+<style name="def:string"                foreground="chameleon1"/>
+<!-- \n,\t,\r -->
+<style name="def:special-char"          foreground="butter3"/>
+<!-- range,len,list,open -->
+<style name="def:identifier"            foreground="skyblue1"/>
+<!-- int,double -->
+<style name="def:type"                  foreground="chameleon3" bold="true"/>
+<!-- def,for,is,in -->
+<style name="def:statement"             foreground="scarletred1" bold="true"/>
+<!-- True,False,None -->
+<style name="def:special-constant"      foreground="plum1" italic="true"/>
+<!-- import,pre-processor -->
+<style name="def:preprocessor"          foreground="plum1" bold="true"/>
+
+
+<!-- Others -->
+<style name="def:error" foreground="aluminium1" bold="true"/>
+<style name="def:note" foreground="aluminium4" bold="true"/>
+<style name="def:underlined" italic="true" underline="true"/>
+
+
+<style name="python:element-name"       forground="plum1"/>
+<!--   P Y T H O N
+<style name="python:doctype" foreground="#cc3300" bold="true"/>
+<style name="python:cdata-delim" foreground="#333333" bold="true"/>
+<style name="python:processing-instruction" bold="true"/>
+<style name="python:attribute-name" use-style="def:identifier"/>
+<style name="python:entity" use-style="def:special-char"/> 
+
+<style name="def:constant"              foreground=""/>
+<style name="def:character"             foreground=""/>
+<style name="def:string"                foreground=""/>
+<style name="def:special-char"          foreground=""/>
+<style name="def:number"                foreground=""/>
+<style name="def:floating-point"        foreground=""/>
+<style name="def:decimal"               foreground=""/>
+<style name="def:base-n-integer"        foreground=""/>
+<style name="def:complex"               foreground=""/>
+<style name="def:special-constant"      foreground=""/>
+<style name="def:boolean"               foreground=""/>
+<style name="bookmark"                  foreground=""/>
+-->
+
+</style-scheme>
