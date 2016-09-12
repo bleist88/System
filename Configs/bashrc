@@ -1,4 +1,4 @@
-##  Bash Profile for Ubuntu
+##  Bash Profile for OSX
 
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
@@ -80,10 +80,10 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ls='ls -G --color --group-directories-first'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias ls='gls -G --color --group-directories-first'
+alias ll='gls -alF'
+alias la='gls -A'
+alias l='gls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -110,18 +110,16 @@ fi
 
 # Path Additions.
 
-export  PATH="${PATH}:.:"
-export  PATH="${PATH}:/Users/Brian/System/Scripts:"
-export  PATH="${PATH}:/Users/Brian/System/Library/Scripts:"
+export  PATH="${PATH}:."
+export  PATH="${PATH}:/Users/Brian/System/Scripts"
+export  PATH="${PATH}:/Users/Brian/System/Library/Scripts"
 
-export  PYTHONPATH="/Users/Brian/System/Library:"
+export  PYTHONPATH="${PYTHONPATH}/Users/Brian/System/Library"
+export  PYTHONPATH="${PYTHONPATH}:/Users/Brian/System/Library/AstroLib"
 
 # User Variables.
 
 export  Hubble="bleist@hubble.physics.louisville.edu"
-export  Repos="bleist@hubble.physics.louisville.edu:Repositories"
-
-export  profile="/.bash_profile"
 
 # User Aliases.
 
