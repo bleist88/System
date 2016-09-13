@@ -15,7 +15,6 @@ setenv  PATH            ${PATH}:/home/bleist/System/Scripts
 setenv  PATH            ${PATH}:/home/bleist/System/Library/Scripts/
 
 setenv  PYTHONPATH	    /home/bleist/System/Library/
-setenv  PYTHONPATH      ${PYTHONPATH}:/home/bleist/System/Library/AstroLib/
 
 ## Variables
 
