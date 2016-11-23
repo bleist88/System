@@ -11,8 +11,8 @@
 
 setenv  PATH            ${PATH}:.
 setenv  PATH		    ${PATH}:/astro/bin/
-setenv  PATH            ${PATH}:/home/bleist/System/Scripts
-setenv  PATH            ${PATH}:/home/bleist/System/Library/Scripts/
+setenv  PATH            ${PATH}:/home/bleist/System/Scripts/
+setenv  PATH            ${PATH}:/home/bleist/System/Library/AstroLib/Scripts/
 
 setenv  PYTHONPATH	    /home/bleist/System/Library/
 

@@ -15,7 +15,7 @@ import shutil as sh
 
 ################################################################################
 
-## Specify unwanted items.
+##  Specify unwanted items.
 
 unwanted_beginnings = [
 
@@ -29,21 +29,21 @@ unwanted_dirs     = [
     "__pycache__",
 ]
 
-## Get path from sys.argv.
+##  Get path from sys.argv.
 
 if len( sys.argv ) == 1:
 
-    path    = './'
+    path    = '.'
 
 elif len( sys.argv ) == 2:
 
-    path    = sys.argv[1] + '/'
+    path    = sys.argv[1]
 
 else:
 
     print("There are too many arguments.")
 
-## Iterate through the directory and remove all unwanted items.
+##  Iterate through the directory and remove all unwanted items.
 
 for f in os.listdir( path ):
 
@@ -51,19 +51,19 @@ for f in os.listdir( path ):
 
         if f[:len(beginning)] == beginning:
 
-            os.remove( path + f )
-            print( "Removed " + f + ".")
+            os.remove( os.path.join(path, f) )
+            print( "Removed " + os.path.join(path, f) + ".")
 
     for ending in unwanted_endings:
 
         if f[-len(ending):] == ending:
 
-            os.remove( f )
-            print( "Removed " + f + ".")
+            os.remove( os.path.join(path, f) )
+            print( "Removed " + os.path.join(path, f) + ".")
 
     for total in unwanted_dirs:
 
         if f  == total:
 
-            sh.rmtree( path + f )
-            print( "Removed " + f + ".")
+            sh.rmtree( os.path.join(path, f) )
+            print( "Removed " + os.path.join(path, f) + ".")

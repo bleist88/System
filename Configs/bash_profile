@@ -112,9 +112,9 @@ fi
 
 export  PATH="${PATH}:."
 export  PATH="${PATH}:/Users/Brian/System/Scripts"
-export  PATH="${PATH}:/Users/Brian/System/Library/Scripts"
+export  PATH="${PATH}:/Users/Brian/System/Library/AstroLib/Scripts"
 
-export  PYTHONPATH="${PYTHONPATH}/Users/Brian/System/Library"
+export  PYTHONPATH="${PYTHONPATH}:/Users/Brian/System/Library"
 
 # User Variables.
 
