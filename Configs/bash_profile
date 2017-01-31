@@ -120,6 +120,8 @@ export  PYTHONPATH="${PYTHONPATH}:/Users/Brian/System/Library"
 
 export  Hubble="bleist@hubble.physics.louisville.edu"
 
+export  Cloud="/Users/brian/Library/Mobile\ Documents/com\~apple\~CloudDocs/"
+
 # User Aliases.
 
 alias   ssh="ssh -Y"
