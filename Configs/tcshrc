@@ -23,3 +23,4 @@ setenv  PYTHONPATH	    /home/bleist/System/Library/
 alias   ds9		       'ds9_72'
 alias   python		   '/usr/local/bin/ipython3'
 alias   python2		   '/usr/local/bin/ipython2'
+alias   python3        '/usr/local/bin/ipython3'
