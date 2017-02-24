@@ -30,4 +30,10 @@ from mpl_toolkits.mplot3d   import Axes3D
 from astropy.io             import fits
 from astropy.wcs            import WCS
 
-import photutils as photo
+##  Packages
+
+from AstroLib   import Io
+from AstroLib   import Fits
+from AstroLib   import Mc3
+from AstroLib   import PlotLib
+
