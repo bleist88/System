@@ -36,4 +36,5 @@ from AstroLib   import Io
 from AstroLib   import Fits
 from AstroLib   import Mc3
 from AstroLib   import PlotLib
+from AstroLib   import Photometry
 

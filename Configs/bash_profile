@@ -127,3 +127,6 @@ export  Cloud="/Users/brian/Library/Mobile\ Documents/com\~apple\~CloudDocs/"
 alias   ssh="ssh -Y"
 alias   python="ipython3"
 alias   pandoc="pandoc -f markdown_github"
+alias   gpush="git add -A; git commit -m 'updating'; git push"
+alias   gpull="git pull"
+
