@@ -33,7 +33,8 @@
     #-   brew cask install mactex           -> This didn't work.
     #_   brew cask install texmaker         
     #-   brew install Caskroom/cask/mactex   
-    -   brew cask install 
+    -   brew cask install
+
 ##  Python + Packages
 
 *   Python and Python3
@@ -67,6 +68,9 @@
 *   iPython
     -   pip3 install ipython
     -   pip2 install ipython
+
+*   Kohonen SOM
+    -   still no solutions yet (python2 only)
 
 ##  Java
 
