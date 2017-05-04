@@ -1,7 +1,7 @@
 
 ##  Internal Imports
 
-import  .Io
+from .  import  Io
 
 ##  System
 
