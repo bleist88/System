@@ -1,0 +1,25 @@
+#!/usr/local/bin/python3
+
+from AstroLib import *
+
+################################################################################
+
+Parser  = Io.ArgParser( sys.argv )
+
+Parser.add_argument(
+    name            = "configs_file",
+    default         = None,
+    type            = str,
+    key             = None,
+    flag            = "-c",
+    contains        = None,
+    required        = True,
+    description     = "A configs file for a dz plot."
+)
+
+Parser.parse_arguments()
+Parser.check_satisfied()
+
+if Parser.satisfied is True:
+
+    PyZ.from_configs( Parser.get("configs_file") )

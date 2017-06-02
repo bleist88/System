@@ -1,0 +1,70 @@
+#!/usr/local/bin/python3
+"""
+Script to run PySEx functions.
+"""
+
+from __imports__ import *
+
+################################################################################
+
+##  Create the main argument parser.
+
+Parser  = Io.ArgParser()
+
+Parser.add_argument(
+    name            = "image",
+    default         = False,
+    dtype           = str,
+    flag            = "-i",
+    required        = True,
+    description     = "image/batch to Sextract"
+)
+
+Parser.add_argument(
+    name            = "detection",
+    default         = False,
+    dtype           = str,
+    flag            = "-d",
+    required        = True,
+    description     = "detection image"
+)
+
+Parser.add_argument(
+    name            = "sex",
+    default         = False,
+    dtype           = str,
+    flag            = "-c",
+    required        = True,
+    description     = ".sex file"
+)
+
+Parser.add_argument(
+    name            = "specs",
+    default         = False,
+    dtype           = str,
+    flag            = "-s",
+    required        = True,
+    description     = ".specs file"
+)
+
+Parser.parse( sys.argv )
+
+################################################################################
+
+##  For now, let's just ignore the option just to run SExtractor.
+##  It's only interesting in batch mode, now.
+
+if Parser.get("sex") and Parser.get("specs"):
+
+    Instrument  = Parser.get("image")
+    Detection   = Parser.get("detection")
+    specs_file  = Parser.get("specs")
+    sex_file    = Parser.get("sex")
+
+    Photopy.SEx.batch_sex(
+        Instrument, specs_file, sex_file, detection=Detection, command="sex"
+    )
+
+else:
+
+    print("Sorry :/")
