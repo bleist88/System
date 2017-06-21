@@ -2,8 +2,9 @@
 ##  Internal Imports
 
 import  Io
+import  MCC
 import  Photopy
-import  Maths   as M
+import  Maths
 
 ##  System
 

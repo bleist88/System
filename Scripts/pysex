@@ -22,10 +22,10 @@ Parser.add_argument(
 
 Parser.add_argument(
     name            = "detection",
-    default         = False,
+    default         = None,
     dtype           = str,
     flag            = "-d",
-    required        = True,
+    required        = False,
     description     = "detection image"
 )
 
@@ -60,7 +60,7 @@ if Parser.get("sex") and Parser.get("specs"):
     Detection   = Parser.get("detection")
     specs_file  = Parser.get("specs")
     sex_file    = Parser.get("sex")
-
+    
     Photopy.SEx.batch_sex(
         Instrument, specs_file, sex_file, detection=Detection, command="sex"
     )

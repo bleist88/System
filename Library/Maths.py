@@ -44,7 +44,7 @@ def hist( sample, dx=None, bins=None, min=None, max=None ):
 
 def smooth( x, y, std, trim=1 ):
 
-    Y   = np.copy( y )
+    Y   = np.zeros( y.size )
 
     for i in range( trim, x.size - trim ):
 
@@ -137,3 +137,17 @@ def fold( x1, y1, x2, y2, X=None ):
     flux        = np.trapz( Y1 * Y2, x=X )
 
     return  flux
+
+##  ========================================================================  ##
+
+##  Cumulative Distribution Function
+
+def cdf( x, y ):
+
+    Y   = np.zeros( y.size )
+
+    for i in range( x.size ):
+
+        Y[i]    = np.trapz( y[:i], x=x[:i] )
+
+    return  Y
