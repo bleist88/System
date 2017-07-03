@@ -4,7 +4,62 @@ import matplotlib.pyplot as pyplot
 
 ##  ========================================================================  ##
 
-##  Histogram Function
+def factorial( n ):
+
+    N       = np.arange( 1, n+1 )
+    fact    = 1
+
+    for i in range( N.size ):
+
+        fact   *= N[i]
+
+    return  fact
+
+##  ========================================================================  ##
+
+def clean_sample( sample, sigma, epsilon, iters=20 ):
+
+    while True:
+
+        ##  Stop when iters reaches 0.
+
+        if iters <= 0:
+            break
+
+        iters  -= 1
+
+        ##  Calculate outliers.
+
+        mean        = np.mean( sample )
+        std         = np.std( sample )
+
+        outliers    = np.where(
+            (sample     > mean + sigma * std) |
+            (sample     < mean - sigma * std)
+        )[0]
+
+        ##  Break if the mean fraction changed more than epsilon.
+
+        new_mean    = np.mean( sample[outliers] )
+
+        if np.abs( (new_mean - mean) / mean ) < epsilon:
+            break
+
+    ##  Return the sample of inliers and outliers.
+
+    inliers     = np.where(
+        (sample    <= mean + sigma * std) &
+        (sample    >= mean - sigma * std)
+    )[0]
+
+    outliers    = np.where(
+        (sample     > mean + sigma * std) |
+        (sample     < mean - sigma * std)
+    )[0]
+
+    return  inliers, outliers
+
+##  ========================================================================  ##
 
 def hist( sample, dx=None, bins=None, min=None, max=None ):
 
@@ -34,19 +89,19 @@ def hist( sample, dx=None, bins=None, min=None, max=None ):
 
     for i in range( x.size - 1 ):
 
-        N[i]    = np.where( (sample >= x[i]) & (sample <= x[i+1]) )[0].size
+        N[i]    = np.where(
+            (sample >= x[i]) & (sample <= x[i+1])
+        )[0].size
 
     return  x, N
 
 ##  ========================================================================  ##
 
-##  Gaussian Smoothing Function
+def smooth( x, y, std ):
 
-def smooth( x, y, std, trim=1 ):
+    Y       = np.copy( y )
 
-    Y   = np.zeros( y.size )
-
-    for i in range( trim, x.size - trim ):
+    for i in range( 1, x.size-1 ):
 
         weights = np.exp( -.5 * ((x - x[i]) / std)**2 )
         Y[i] = np.average( y, weights=weights )
@@ -55,17 +110,40 @@ def smooth( x, y, std, trim=1 ):
 
 ##  ========================================================================  ##
 
-##  Gaussian Interpolation Function
+def derivative( x, y ):
 
-def interpolate( x, y, dx ):
+    d       = np.zeros( y.size )
 
-    X       = np.arange( np.min(x), np.max(x) + dx, dx )
-    Y       = np.zeros( X.size )
-    Y[0]    = y[0]
-    Y[-1]   = y[-1]
+    d[1:]   = (y[1:] - y[:-1]) / (x[1:] - x[:-1])
+    d[0]    = d[1] + (x[1] - x[0]) * (d[2] - d[1])/(x[2] - x[1])
 
-    slope       = np.zeros( x.size )
-    slope[1:]   = (y[1:] - y[:-1]) / (x[1:] - x[:-1])
+    d[1]    = (.75*d[1] + .25*d[0])
+    d[0]    = (.75*d[0] + .25*d[1])
+
+    return  d
+
+##  ========================================================================  ##
+
+def interpolate( x, y, X=None, dx=None, std=None ):
+
+    ##  Smooth the function if std is not None.
+
+    if std is not None:
+        y   = smooth( x, y, std )
+
+    ##  Create X array if given dx.
+
+    if X is None and dx is not None:
+        X   = np.arange( np.min(x), np.max(x) + dx, dx )
+
+    ##  Create Y array.
+
+    Y   = np.zeros( X.size )
+
+    ##  Calculate the derivative.
+
+    d   = derivative( x, y )
+    D   = derivative( x, d )
 
     ##  Loop through all X points.
 
@@ -77,17 +155,20 @@ def interpolate( x, y, dx ):
 
                 d1      = X[i] - x[j]
                 d2      = x[j+1] - X[i]
-                S       = (d2 * slope[j] + d1 * slope[j+1]) / ( d1 + d2 )
+                S       = (d2 * d[j] + d1 * d[j+1]) / ( d1 + d2 )
 
                 ##  Estimate the point based on the slopes.
 
                 Y[i]    = y[j] + S * d1
 
+    ##  Estimate endpoints.
+
+    Y[0]    = Y[0]
+    Y[-1]   = Y[-2]
+
     return  X, Y
 
 ##  ========================================================================  ##
-
-##  Convolution Filtering Function.
 
 def convolve( x, y, F ):
 
@@ -110,27 +191,17 @@ def convolve( x, y, F ):
 
 ##  ========================================================================  ##
 
-##  Fold and integrate two functions.
-
 def fold( x1, y1, x2, y2, X=None ):
 
     ##  Use the SED space if X is not specified.
 
-    if X is not None:
-
+    if X is None:
         X   = x1
 
     ##  Ensure that the SED and filter are on the same space.
 
-    if x1 != x2:
-
-        Y1      = np.interp( X, x1, y1 )
-        Y2      = np.interp( X, x2, y2 )
-
-    pyplot.plot( X, Y1, "k" )
-    pyplot.plot( X, Y2, "b" )
-    pyplot.plot( X, Y1 * Y2 )
-    pyplot.show()
+    X, Y1   = interpolate( x1, y1, X=X )
+    X, Y2   = interpolate( x2, y2, X=X )
 
     ##  Integrate the Filter with the SED to obtain the flux.
 
@@ -139,8 +210,6 @@ def fold( x1, y1, x2, y2, X=None ):
     return  flux
 
 ##  ========================================================================  ##
-
-##  Cumulative Distribution Function
 
 def cdf( x, y ):
 
