@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/anaconda3/bin/python3
 """
 Run/cln.py
 
@@ -41,7 +41,7 @@ elif len( sys.argv ) == 2:
 
 else:
 
-    print("There are too many arguments.")
+    print("...there are too many arguments.")
 
 ##  Iterate through the directory and remove all unwanted items.
 
@@ -52,18 +52,18 @@ for f in os.listdir( path ):
         if f[:len(beginning)] == beginning:
 
             os.remove( os.path.join(path, f) )
-            print( "Removed " + os.path.join(path, f) + ".")
+            print( "removed " + os.path.join(path, f) + ".")
 
     for ending in unwanted_endings:
 
         if f[-len(ending):] == ending:
 
             os.remove( os.path.join(path, f) )
-            print( "Removed " + os.path.join(path, f) + ".")
+            print( "removed " + os.path.join(path, f) + ".")
 
     for total in unwanted_dirs:
 
         if f  == total:
 
             sh.rmtree( os.path.join(path, f) )
-            print( "Removed " + os.path.join(path, f) + ".")
+            print( "removed " + os.path.join(path, f) + ".")

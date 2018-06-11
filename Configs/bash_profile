@@ -9,7 +9,7 @@
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
+# HISTCONTROL=ignoredups:ignorespace
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -71,8 +71,8 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -81,7 +81,7 @@ fi
 
 # some more ls aliases
 alias ls='gls -G --color --group-directories-first'
-alias ll='gls -alF'
+alias ll='gls -alF --block-size=K'
 alias la='gls -A'
 alias l='gls -CF'
 
@@ -108,21 +108,22 @@ fi
 ################################################################################
 ###   U S E R   C O N F I G U R A T I O N S   ##################################
 
-# Path Additions.
+##  Path Additions
+##  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 
-export  PATH="${PATH}:."
-export  PATH="${PATH}:/Users/Brian/System/Scripts"
-export  PATH="${PATH}:/Users/Brian/System/Library/AstroLib/Scripts"
+export  SYS_PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/opt/X11/bin"
+export  USR_PATH=".:/anaconda3/bin:System/Scripts"
+export  PATH="${USR_PATH}:${SYS_PATH}"
 
-export  PYTHONPATH="${PYTHONPATH}:/Users/Brian/System/Library"
+export  PYTHONPATH="" #"/Users/Brian/System/Library"
 
-# User Variables.
+##  User Variables.
 
 export  Hubble="bleist@hubble.physics.louisville.edu"
-
 export  Cloud="/Users/brian/Library/Mobile\ Documents/com\~apple\~CloudDocs/"
+export  myhub="https://github.com/bleist88"
 
-# User Aliases.
+##  User Aliases.
 
 alias   ssh="ssh -Y"
 alias   python="ipython3"

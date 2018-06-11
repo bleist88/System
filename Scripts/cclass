@@ -1,4 +1,4 @@
-#!/usr/local/bin/python3
+#!/anaconda3/bin/python3
 """
 Run/cclass.py
 
@@ -20,7 +20,7 @@ import sys
 
 ## User variables.
 
-template        = '/home/brian/Workspace/Run/Templates/Template'
+template        = '/Users/brian/System/Templates/Template'
 keyChar         = '<CLASS>'
 
 # Command line arguments.
