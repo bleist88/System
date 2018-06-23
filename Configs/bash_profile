@@ -105,29 +105,34 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-################################################################################
-###   U S E R   C O N F I G U R A T I O N S   ##################################
+##  ========================================================================  ##
+##  U S E R   C O N F I G U R A T I O N S
 
 ##  Path Additions
-##  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+##  Mac's original PATH:
+##      /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
 
-export  SYS_PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/opt/X11/bin"
-export  USR_PATH=".:/anaconda3/bin:System/Scripts"
-export  PATH="${USR_PATH}:${SYS_PATH}"
+export  home="/Users/Brian"
+export  mac_path="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/opt/X11/bin"
+export  usr_path=".:${home}/System/Scripts"
+export  ext_path="/anaconda3/bin"
+export  PATH="${mac_path}:${usr_path}:${ext_path}"
 
-export  PYTHONPATH="" #"/Users/Brian/System/Library"
+##  Python's Path
 
-##  User Variables.
+export  PYTHONPATH="${home}/System/Library:${PYTHONPATH}"
+alias   python="/anaconda3/bin/ipython3"
+#alias   python="ipython3"
+
+##  Servers
 
 export  Hubble="bleist@hubble.physics.louisville.edu"
-export  Cloud="/Users/brian/Library/Mobile\ Documents/com\~apple\~CloudDocs/"
-export  myhub="https://github.com/bleist88"
+export  hubble="bleist@hubble.physics.louisville.edu"
+export  bleist88="https://github.com/bleist88"
 
-##  User Aliases.
+##  Aliases
 
 alias   ssh="ssh -Y"
-alias   python="ipython3"
 alias   pandoc="pandoc -f markdown_github"
 alias   gpush="git add -A; git commit -m 'updating'; git push"
 alias   gpull="git pull"
-

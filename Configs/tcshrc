@@ -1,18 +1,21 @@
 # TCSHRC
 
-## To update changes made in the .tcshrc file...
-##    source .tcshrc
+##  To update changes made in the .tcshrc file...
+##      source .tcshrc
 
-## My shell can be switched to a bash shell via...
-##    chsh -s /bin/bash/
-## Unfortunately, I don't have permissions to do so.
+##  My shell can be switched to a bash shell via...
+##      chsh -s /bin/bash/
+##  Unfortunately, I don't have permissions to do so.
 
 ## PATHS
 
-setenv  PATH            ${PATH}:.
-setenv  PATH		    ${PATH}:/astro/bin/
-setenv  PATH            ${PATH}:/home/bleist/System/Scripts/
-setenv  PATH            ${PATH}:/home/bleist/System/Library/AstroLib/Scripts/
+setenv  home            /home/bleist
+
+setenv  mac_path        /usr/local/bin:/usr/bin:/bin:/usr/sbin:/opt/X11/bin
+setenv  hub_path        /usr/lib64/mpi/gcc/openmpi/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin/X11:usr/X11R6/bin:/usr/lib/qt3/bin
+setenv  usr_path        .:${home}/System/Scripts
+setenv  ext_path        /anaconda3/bin
+setenv  PATH            ${hub_path}:${usr_path}:${ext_path}
 
 setenv  PYTHONPATH	    /home/bleist/System/Library/
 
@@ -21,8 +24,6 @@ setenv  PYTHONPATH	    /home/bleist/System/Library/
 ## Aliases
 
 alias   ds9		       'ds9_72'
-alias   python		   '/usr/local/bin/ipython3'
-alias   python2		   '/usr/local/bin/ipython2'
-alias   python3        '/usr/local/bin/ipython3'
+alias   python		   '/astro/anaconda3/bin/ipython3
 alias   gpush          'git add -A; git commit -m "updating"; git push'
 alias   gpull          'git pull'
