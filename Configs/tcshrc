@@ -13,7 +13,7 @@ setenv  home            /home/bleist
 
 setenv  mac_path        /usr/local/bin:/usr/bin:/bin:/usr/sbin:/opt/X11/bin
 setenv  hub_path        /usr/lib64/mpi/gcc/openmpi/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin/X11:usr/X11R6/bin:/usr/lib/qt3/bin
-setenv  usr_path        .:${home}/System/Scripts
+setenv  usr_path        ${home}/System/Scripts:.
 setenv  ext_path        /anaconda3/bin
 setenv  PATH            ${hub_path}:${usr_path}:${ext_path}
 
@@ -24,6 +24,6 @@ setenv  PYTHONPATH	    /home/bleist/System/Library/
 ## Aliases
 
 alias   ds9		       'ds9_72'
-alias   python		   '/astro/anaconda3/bin/ipython3
+alias   python		   '/astro/anaconda3/bin/ipython3'
 alias   gpush          'git add -A; git commit -m "updating"; git push'
 alias   gpull          'git pull'

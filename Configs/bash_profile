@@ -114,7 +114,7 @@ fi
 
 export  home="/Users/Brian"
 export  mac_path="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/opt/X11/bin"
-export  usr_path=".:${home}/System/Scripts"
+export  usr_path="${home}/System/Scripts:."
 export  ext_path="/anaconda3/bin"
 export  PATH="${mac_path}:${usr_path}:${ext_path}"
 
