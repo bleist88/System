@@ -1,7 +1,7 @@
 
 from    astrolib    import  io
 from    astrolib    import  mcc
-from    astrolib    import  photometry
+from    astrolib    import  photo
 
 import  os
 import  sys
@@ -19,3 +19,4 @@ from    mpl_toolkits.mplot3d    import Axes3D
 
 from    astropy.io              import fits
 from    astropy.wcs             import WCS
+
