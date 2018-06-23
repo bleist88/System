@@ -21,6 +21,8 @@ setenv  PYTHONPATH	    /home/bleist/System/Library/
 
 ## Variables
 
+setenv  bleist88        https://github.com/bleist88
+
 ## Aliases
 
 alias   ds9		       'ds9_72'
